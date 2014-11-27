@@ -10,6 +10,10 @@ For ease, a bash script is included that just needs 3 parameters:
 
 $ ./apdex.sh <pivot_field> <T> <time interval>
 
+In a cron job:
+
+*/15 *  *  *  *  $api_tool/my_apdex.sh json.ResponseTime_ms 1000 15m >> $log_dir"apdex.log" 2>&1
+
 If you want to run the Python file directly:
 
 $ python apdex.py -h
