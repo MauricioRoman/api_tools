@@ -98,7 +98,11 @@ def getApdex(id, query, pivot_field, percentages, searchFrom, searchTo, timestam
 
     #Send data to your data store 
     # (Put your own code here)
-    
+   
+    #Log to stdout
+    now = datetime.datetime.now()
+    print now, pivot, metrics_dict
+
     #Send values back to Loggly
     logQueryData(output_key,dict([('timestamp',str(timestamp.isoformat()) ), ('action','analytics'),
                                     ('bin',id), (pivot,metrics_dict) ] ), test_flag)

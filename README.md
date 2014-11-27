@@ -6,6 +6,12 @@ and then sends the metric back into Loggly for visualization.
 
 How to use:
 
+For ease, a bash script is included that just needs 3 parameters:
+
+$ ./apdex.sh <pivot_field> <T> <time interval>
+
+If you want to run the Python file directly:
+
 $ python apdex.py -h
 usage: apdex.py [-h] -t T -f PIVOT_FIELD -l TOKEN -u USERNAME -p PASSWORD -s
                 SUBDOMAIN -i INTERVAL [--test]
