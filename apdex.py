@@ -112,7 +112,8 @@ def getApdex(id, query, pivot_field, percentages, searchFrom, searchTo, timestam
 
     #Send values back to Loggly
     logQueryData(output_key,dict([('timestamp',str(timestamp.isoformat()) ), ('action','analytics'),
-                                    ('bin',id), (pivot,metrics_dict) ] ), test_flag)
+                                    ('bin',id), ('deployment', deployment),
+                                    (pivot,metrics_dict) ] ), test_flag)
 
     return 0
 
