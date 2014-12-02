@@ -58,6 +58,13 @@ def process_arguments(args):
                         help='Search time interval (ex. 15m, 1h)'
                         )
 
+    parser.add_argument('-d',
+                        dest='deployment',
+                        type=str,
+                        required=True,
+                        help='Deployment instance (e.g. loggly.com)'
+                        )
+
     parser.add_argument('--test', action='store_true',
                         help='Test -- does not send data to Loggly')
 
@@ -141,7 +148,7 @@ def main():
     now = datetime.datetime.utcnow()
 
     getApdex(options.interval, query_terms, options.pivot_field, percentages, '-'+options.interval,
-            'now', now, options.subdomain, 'loggly.com', options.username, options.password,
+            'now', now, options.subdomain, options.deployment, options.username, options.password,
             options.token, options.test)
 
 if __name__ == '__main__':
