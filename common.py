@@ -1,6 +1,6 @@
 #!/Users/mauricio/anaconda/bin/python2.7
 
-import requests, urllib2, simplejson, datetime
+import requests, urllib2, simplejson, datetime, time
 
 # Constants
 MAX_RETRIES = 15       #Max number of retries when requesting data
